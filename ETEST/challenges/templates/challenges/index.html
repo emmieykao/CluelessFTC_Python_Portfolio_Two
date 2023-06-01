@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/challenges/challenges.css">
+    <title>Challenges Index</title>
+</head>
+<body>
+    <h1 style="color:rgb(231, 207, 177)">Challenges / Goals</h1>
+    <ul>
+        {% for month in months_key %}
+        <!-- essentially printing it out -->
+            <li style="list-style-type: square; color: antiquewhite;"><a href = "/challenges/{{ month }}" style="color:antiquewhite">{{ month.capitalize }}</a>
+            {% if month == 'december' or month == 'january' or month == 'february' %}
+                ❄️❄️❄️
+            {% elif month == 'june' or month == 'july' or month == 'august' %}
+                🔥🔥🔥
+            {% elif month == 'october' %}
+                🎃🎃🎃
+            {% elif month == 'november' %}
+                🦃🦃🦃
+            {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

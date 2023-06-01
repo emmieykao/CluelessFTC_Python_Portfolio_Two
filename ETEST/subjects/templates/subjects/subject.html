@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/subjects/subjects.css">
+    <title>{{ subject_name }}</title>
+</head>
+<body>
+    <h1>{{ subject_name.capitalize }} Assignments</h1>
+    <table class="table table-hover table-danger">
+        <thead>
+            <tr>
+                <th scope="col">Num</th>
+                <th scope="col">Assignment</th>
+                <th scope="col">Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for asgn, ddate in assignments %}
+        <tr>
+            <th scope="row">#{{ forloop.counter }}</th>
+            <td>{{ asgn }}</td>
+            <td>{{ ddate }}</td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

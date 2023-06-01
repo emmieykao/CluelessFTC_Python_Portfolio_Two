@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(215, 97, 107);
+}
+h1{
+    color: rgb(63, 27, 68);
+}
+a{
+    color:rgb(167, 55, 116);
+    text-decoration:none;
+}
+a:hover {
+    color:rgb(63, 20, 66);
+}
